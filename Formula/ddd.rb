@@ -8,7 +8,7 @@ class Ddd < Formula
   depends_on "node"
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*") => "ddd"
+    bin.install libexec.glob("bin/*")
   end
   test do
     system "#{bin}/ddd", "--version"
